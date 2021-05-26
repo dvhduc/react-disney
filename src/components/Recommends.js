@@ -5,7 +5,6 @@ import { selectRecommend } from "../features/movie/movieSlice";
 
 const Recommends = (props) => {
   const movies = useSelector(selectRecommend);
-  console.log(movies, ":🛢️");
 
   return (
     <Container>
@@ -15,6 +14,7 @@ const Recommends = (props) => {
           movies.map((movie, key) => (
             <Wrap key={key}>
               {movie.id}
+
               <Link to={`/detail/` + movie.id}>
                 <img src={movie.cardImg} alt={movie.title} />
               </Link>
